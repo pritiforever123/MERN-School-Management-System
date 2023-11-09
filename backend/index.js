@@ -5,7 +5,7 @@ const dotenv = require("dotenv")
 // const bodyParser = require("body-parser")
 const app = express()
 const Routes = require("./routes/route.js")
-
+const MongoClient = require('mongodb').MongoClient
 const PORT = process.env.PORT || 5000
 
 dotenv.config();
@@ -15,9 +15,9 @@ dotenv.config();
 
 app.use(express.json({ limit: '10mb' }))
 app.use(cors())
-
+const client = new MongoClient('mongodb://0.0.0.0:27017/?authMechanism=DEFAULT');
 mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect('mongodb://0.0.0.0:27017/?authMechanism=DEFAULT', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
