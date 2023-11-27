@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require("cors")
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 // const bodyParser = require("body-parser")
 const app = express()
@@ -18,7 +18,7 @@ app.use(cors())
 // const client = new MongoClient('mongodb://0.0.0.0:27017/?authMechanism=DEFAULT');
 const client = new MongoClient('mongodb+srv://baispriti4:priti@cluster0.8wkbksc.mongodb.net/?retryWrites=true&w=majority')
 // mongoose.connect('mongodb://0.0.0.0:27017/?authMechanism=DEFAULT'
-mongoose.connect('mongodb+srv://baispriti4:priti@cluster0.8wkbksc.mongodb.net/?retryWrites=true&w=majority'
+client.connect('mongodb+srv://baispriti4:priti@cluster0.8wkbksc.mongodb.net/?retryWrites=true&w=majority'
         , {
         useNewUrlParser: true,
         useUnifiedTopology: true
